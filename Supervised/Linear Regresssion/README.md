@@ -17,11 +17,12 @@ y = m*x + b
 
 Cost Function:
 
-J(m,b) = (1/n)*sum(y_pred - y)^2
+J(m,b) = (1/n)*sum(y_pred - y)^2 or mean(y_pred - y)
 
 Gradient Descent:
 
 m = m - α * dm
+
 b = b - α * db
 
 ## Project Workflow
