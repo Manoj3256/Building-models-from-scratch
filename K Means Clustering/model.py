@@ -12,7 +12,7 @@ class K_Means():
         np.random.seed(self.random_state)
         index=np.random.choice(len(X),size=self.n_clusters,replace=False)
         points=X[index]
-        for i in range(self.iterations):
+        for _ in range(self.iterations):
             clusters=[[] for _ in range(self.n_clusters)]
             for j in range(len(X)):
                 distance=np.zeros(self.n_clusters)
@@ -20,7 +20,6 @@ class K_Means():
                     distance[c]=np.sqrt((X[j,0]-points[c,0])**2+(X[j,1]-points[c,1])**2 )
                 clusters[np.argmin(distance)].append(X[j])
             for c in range(self.n_clusters):
-                # if len(clusters[c])>0:
                 points[c]=np.mean(clusters[c],axis=0)
         self.cluster_centers_=points
         print(self.cluster_centers_)
